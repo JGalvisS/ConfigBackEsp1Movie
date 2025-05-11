@@ -11,9 +11,9 @@ spring:
           enable: true
       routes:
         - id: catalog-service
-          uri: lb://ctalog-service/
+          uri: lb://catalog-service
           predicates:
-            - Path=/catalog/**
+            - path=/catalog/**
 
 eureka:
   client:
