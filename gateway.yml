@@ -10,8 +10,8 @@ spring:
         locator:
           enable: true
       routes:
-        - id: catalog-service
-          uri: http://localhost:8080
+        - id: catalogRoute
+          uri: lb://catalog-service
           predicates:
             - Path=/catalog/**
 
