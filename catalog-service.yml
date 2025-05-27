@@ -42,3 +42,5 @@ resilience4j:
         registerHealthIndicator: true
         allowHealthIndicatorToFail: false
         automaticTransitionFromOpenToHalfOpenEnabled: true
+        recordException:
+          - feign.FeignException
