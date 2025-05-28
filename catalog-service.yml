@@ -48,3 +48,4 @@ resilience4j:
           - org.springframework.web.client.HttpServerErrorException
           - feign.FeignException$InternalServerError
           - feign.RetryableException
+          - java.lang.RuntimeException
