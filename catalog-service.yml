@@ -42,4 +42,7 @@ resilience4j:
         registerHealthIndicator: true
         allowHealthIndicatorToFail: false
         automaticTransitionFromOpenToHalfOpenEnabled: true
-
+        recordExceptions:
+          - feign.FeignException
+          - java.io.IOException
+          - org.springframework.web.client.HttpServerErrorException
