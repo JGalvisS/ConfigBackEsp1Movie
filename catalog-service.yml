@@ -37,15 +37,21 @@ resilience4j:
         slidingWindowType: COUNT_BASED
         slidingWindowSize: 5
         failureRateThreshold: 50
-        waitDurationInOpenState: 30000
-        permittedNumberOfCallsInHalfOpenState: 3
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 2
         registerHealthIndicator: true
         allowHealthIndicatorToFail: false
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
+          - java.lang.Exception
           - feign.FeignException
           - java.io.IOException
           - org.springframework.web.client.HttpServerErrorException
           - feign.FeignException$InternalServerError
           - feign.RetryableException
           - java.lang.RuntimeException
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
