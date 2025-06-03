@@ -32,11 +32,11 @@ management:
 
 resilience4j:
   circuitbreaker:
-    configs:
-      default:
+    instances:
+      movies:
         registerHealthIndicator: true
         slidingWindowSize: 5
-        minimumNumberOfCallas: 5
+        minimumNumberOfCalls: 5
         permittedNumberOfCallsInHalfOpenState: 3
         automaticTransitionFromOpenToHalfOpenEnabled: true
         waitDurationInOpenState: 5s
