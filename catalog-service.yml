@@ -47,10 +47,7 @@ resilience4j:
       movies:
         waitDuration: 1000
         maxAttempts: 3
-        retryExceptions:
-          - feign.FeignException
-logging:
-  level:
-    io.github.resilience4j.retry: DEBUG
+        registerHealthIndicator: true
+
 
 
