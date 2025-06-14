@@ -49,4 +49,8 @@ resilience4j:
         maxAttempts: 3
         retryExceptions:
           - feign.FeignException
+logging:
+  level:
+    io.github.resilience4j.retry: DEBUG
+
 
