@@ -13,9 +13,6 @@ spring:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
-  zipkin:
-    base-url: http://localhost:9411/
-    enabled: true
 
 eureka:
   client:
@@ -25,7 +22,7 @@ eureka:
     healthcheck:
       enabled: true
     service-url:
-      default-zone: http//localhost:8761/eureka
+      default-zone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true
 management:
@@ -36,6 +33,12 @@ management:
   endpoint:
     health:
       show-details: always
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
 
 
 
